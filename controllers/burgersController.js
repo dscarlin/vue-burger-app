@@ -15,7 +15,7 @@ module.exports = (app) => {
   app.get("/api/burgers", function(req, res) {
     // express callback response by calling burger.selectAllBurger
       
-      db.burgers.findAll({include: [db.Customers]},{order: [['burger_name','ASC']]}).then(function(burgerData) {
+      db.burgers.findAll({include: [db.Customers],order: [['burger_name','ASC']]}).then(function(burgerData) {
         console.log(burgerData)
         res.json(burgerData);
       });
@@ -36,7 +36,7 @@ module.exports = (app) => {
   // put route
   app.put("/api/burgers/:id", function(req, res) {
     let customerId = req.body.Customer
-    
+
     db.burgers
     .update(
       {devoured: true, CustomerId: customerId},

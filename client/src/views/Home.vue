@@ -50,7 +50,7 @@ export default {
       //of customer id using sequelize model and update method
 
       //make customer name blank string if null
-      burger.Customer = (burger.Customer) ? burger.Customer : ''
+      burger.Customer = burger.Customer  || '';
       devourBurger(burger.id,burger.Customer).then(data => {
         this.getBurgers();
       });

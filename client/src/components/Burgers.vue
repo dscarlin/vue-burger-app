@@ -34,7 +34,7 @@
         <div v-for="burger in burgers" :key="burger.id" >
           <!--Template for burgers that have been devoured -->
           <div v-if="burger.devoured" class="form-control devoured">
-            {{burger.id}} . {{burger.burger_name}}  
+            {{burger.burger_name}}  
             <p><small>devoured by: {{burger.Customer.customer_name}}</small></p>
           </div>
         </div>
